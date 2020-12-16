@@ -31,3 +31,22 @@ const quotes = [
 ];
 
 // tu código aquí
+//Get random quote 
+function rndQuote(){
+    var rndNum = Math.floor(Math.random()*(quotes.length-1));
+    return quotes[rndNum];
+}
+
+function changeQuote(){
+
+    newQuote = rndQuote();
+
+    quoteText = document.querySelector("#quote");
+    quoteText.innerHTML = newQuote.quote;
+
+    quoteAuthor = document.querySelector(".quote-author");
+    quoteAuthor.innerHTML = newQuote.author;
+}
+
+btn = document.querySelector("button");
+btn.onclick = changeQuote;
